@@ -2,7 +2,7 @@
 
 require 'spec_helper'
 
-describe 'train::parser' do
+describe 'parser' do
   # please note that these tests are examples only
   # you will need to replace the params and return value
   # with your expectations
