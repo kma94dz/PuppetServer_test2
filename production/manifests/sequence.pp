@@ -18,6 +18,6 @@ file { ['/tmp/dir1/dir2/dir33/part2.txt', '/tmp/dir1/dir2/dir33/part3.txt']:
   ensure => present,
 }
 file { $directoryPath:
-  ensure => present,
+  ensure => 'directory',
 }
 }
