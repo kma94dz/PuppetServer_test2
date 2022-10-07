@@ -12,7 +12,7 @@ file { '/tmp/dir1/dir2/dir3/part1.txt':
   ensure => present,
   before => File[['/tmp/dir1/dir2/dir3/part2.txt', '/tmp/dir1/dir2/dir3/part3.txt']],
   require => File[$directoryPath],
-  content => parser('hello/its/me'),
+  content => String(parser('hello/its/me')),
 }
 file { ['/tmp/dir1/dir2/dir3/part2.txt', '/tmp/dir1/dir2/dir3/part3.txt']:
   ensure => present,
