@@ -3,7 +3,5 @@
 function parser(String $value) >> String {
     $a = $value.split('/')
     $n = $a.length
-    $a.each do |f|
-        $k=0
     return $n 
 }
