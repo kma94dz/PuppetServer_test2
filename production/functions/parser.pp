@@ -2,12 +2,11 @@
 # for more information on native puppet functions.
 function parser(String $value) >> Array {
     $a = $value.split('/')
-    $Directories = []
     $i=0
     $fullpath = ""
     $a.each |$string|{
         $fullpath = fullpath+$string
-        $Directories[$i] = $fullpath + "/"
+        $a[$i] = $fullpath + "/"
         $i=$i+1
     }
     return $n
