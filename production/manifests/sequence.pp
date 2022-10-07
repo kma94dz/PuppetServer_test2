@@ -9,11 +9,15 @@ class production::sequence {
 ### forcer un sequencement de creation de 3 fichiers  
 ########## exemple 2
 ### forcer un sequencement de creation de 3 fichiers  
-file { '/tmp/part11.txt':
+file { '/tmp/dir1/dir2/dir3/part111.txt':
   ensure => present,
-  before => File[['/tmp/part22.txt', '/tmp/part33.txt']]
+  before => File[['/tmp/dir1/dir2/dir3/part222.txt', '/tmp/dir1/dir2/dir3/part333.txt']],
+  require => File[['/tmp/dir1/', '/tmp/dir1/dir2/', '/tmp/dir1/dir2/dir3/']],
 }
-file { ['/tmp/part22.txt', '/tmp/part33.txt']:
+file { ['/tmp/dir1/dir2/dir3/part222.txt', '/tmp/dir1/dir2/dir3/part333.txt']:
+  ensure => present,
+}
+file { ['/tmp/dir1/', '/tmp/dir1/dir2/', '/tmp/dir1/dir2/dir3/']:
   ensure => present,
 }
 }
