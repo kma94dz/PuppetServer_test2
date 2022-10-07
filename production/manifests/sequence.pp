@@ -5,15 +5,15 @@
 # @example
 #   include train::sequence
 class production::sequence {
-file { '/tmp/part1.txt':
-ensure => present,
+########## exemple 1
+### forcer un sequencement de creation de 3 fichiers  
+########## exemple 2
+### forcer un sequencement de creation de 3 fichiers  
+file { '/tmp/part11.txt':
+  ensure => present,
+  before => File[['/tmp/part22.txt', '/tmp/part33.txt']]
 }
-file { '/tmp/part2.txt':
-ensure => present,
-require => File['/tmp/part1.txt'],
-}
-file { '/tmp/part3.txt':
-ensure => present,
-require => File['/tmp/part2.txt'],
+file { ['/tmp/part22.txt', '/tmp/part33.txt']:
+  ensure => present,
 }
 }
