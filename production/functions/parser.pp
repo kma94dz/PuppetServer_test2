@@ -3,7 +3,7 @@
 function parser(String $value) >> String {
     $a = $value.split('/')
     $n = $a.length
-    for nn in $a:
+    for nn in $a
         $k=0
     return $n 
 }
