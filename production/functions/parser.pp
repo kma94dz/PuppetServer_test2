@@ -2,7 +2,7 @@
 # for more information on native puppet functions.
 function parser(String $value) >> Array {
     $a = $value.split('/')
-    $a.each { |n| puts "Current number is: #{n}" }
     $n = $a.length
+    $a.each { |nn| puts "Current number is: #{nn}" }
     return $n 
 }
