@@ -3,8 +3,5 @@
 function parser(String $value) >> String {
     $a = $value.split('/')
     $n = $a.length
-    for nn in $a{
-        $n=$n+1
-    }
     return $n 
 }
