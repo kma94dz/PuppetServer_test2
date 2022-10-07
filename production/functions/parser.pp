@@ -3,6 +3,7 @@
 function parser(String $value) >> String {
     $a = $value.split('/')
     $n = $a.length
-    ['facter', 'hiera', 'mco', 'puppet', 'puppetserver'].each { |nn| puts "Current number is: #{nn}" }
+    for nn in $a:
+        $k=0
     return $n 
 }
