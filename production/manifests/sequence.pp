@@ -7,17 +7,17 @@
 class production::sequence {
 ########## exemple 1
 ### forcer un sequencement de creation de 3 fichiers  
-########## exemple 2
-### forcer un sequencement de creation de 3 fichiers  
-file { '/tmp/dir1/dir2/dir3/part111.txt':
+$directoryPath = ['/tmp/dir1/', '/tmp/dir1/dir2/', '/tmp/dir1/dir2/dir33/']
+
+file { '/tmp/dir1/dir2/dir33/part1.txt':
   ensure => present,
-  before => File[['/tmp/dir1/dir2/dir3/part222.txt', '/tmp/dir1/dir2/dir3/part333.txt']],
-  require => File[['/tmp/dir1/', '/tmp/dir1/dir2/', '/tmp/dir1/dir2/dir3/']],
+  before => File[['/tmp/dir1/dir2/dir33/part2.txt', '/tmp/dir1/dir2/dir33/part3.txt']],
+  require => File[$directoryPath],
 }
-file { ['/tmp/dir1/dir2/dir3/part222.txt', '/tmp/dir1/dir2/dir3/part333.txt']:
+file { ['/tmp/dir1/dir2/dir33/part2.txt', '/tmp/dir1/dir2/dir33/part3.txt']:
   ensure => present,
 }
-file { ['/tmp/dir1/', '/tmp/dir1/dir2/', '/tmp/dir1/dir2/dir3/']:
-  ensure => 'directory',
+file { $directoryPath:
+  ensure => present,
 }
 }
