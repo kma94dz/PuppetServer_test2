@@ -10,10 +10,10 @@ ensure => present,
 }
 file { '/tmp/part2.txt':
 ensure => present,
-require => file["/tmp/part1.txt"],
+require => File['/tmp/part1.txt'],
 }
 file { '/tmp/part3.txt':
 ensure => present,
-require => file["/tmp/part2.txt"],
+require => File['/tmp/part2.txt'],
 }
 }
