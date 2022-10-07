@@ -18,6 +18,6 @@ file { ['/tmp/dir1/dir2/dir3/part222.txt', '/tmp/dir1/dir2/dir3/part333.txt']:
   ensure => present,
 }
 file { ['/tmp/dir1/', '/tmp/dir1/dir2/', '/tmp/dir1/dir2/dir3/']:
-  ensure => present,
+  ensure => 'directory',
 }
 }
