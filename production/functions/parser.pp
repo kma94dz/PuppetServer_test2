@@ -3,6 +3,6 @@
 function parser(String $value) >> Integer {
     $a = $value.split('/')
     $n = $a.length()
-    return $n
+    return ""+$n
     
 }
