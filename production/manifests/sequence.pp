@@ -6,7 +6,7 @@
 #   include train::sequence
 class production::sequence {
 ########## on peut reecrir comme suit
-$directoryPath = '/tmp/dir1/dir2/dir3/dir4/dir5'
+$directoryPath = '/tmp/dir1/dir2/dir3/dir4/dir6'
 
 file { '/tmp/dir1/dir2/dir3/part1.txt':
   ensure => present,
