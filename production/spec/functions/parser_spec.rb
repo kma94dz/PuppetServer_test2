@@ -8,12 +8,12 @@ describe 'parser' do
   # with your expectations
   it { is_expected.to run.with_params(nil).and_raise_error(StandardError) }
 
-  Puppet::Functions.create_function(:'get whats etween brackets') do
-    dispatch :extract_from_bracket do
+  Puppet::Functions.create_function(:'extract_from_bracket') do
+    dispatch :extract do
       param 'String', :some_string
     end
   
-    def extract_from_bracket(some_string)
+    def extract(some_string)
       for i in 0..some_string.length do
         count=1
         if some_string[i]=="("
