@@ -1,4 +1,4 @@
-Puppet::Functions.create_function(:'extract_from_bracket') do
+Puppet::Functions.create_function(:'extract_from_brackets') do
     dispatch :extract do
       param 'String', :some_string
     end
