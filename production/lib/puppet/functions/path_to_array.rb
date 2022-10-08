@@ -12,7 +12,7 @@ Puppet::Functions.create_function(:'path_to_array') do
           paths.push(dir)
         end
       end
-      if path[path.legth-1] != '/' then
+      if path[path.length-1] != '/' then
         paths.push(dir)
       end
       return paths       
