@@ -17,7 +17,9 @@ Puppet::Functions.create_function(:'extract_from_brackets') do
             end
             if count == 0 then
               for c in i..j do
-                elems.push(some_string[c])
+                elem=[]
+                elem[0]=some_string[c]
+                elems.push(elem)
               end  
               break
             end
