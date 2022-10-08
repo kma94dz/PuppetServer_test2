@@ -8,7 +8,7 @@ describe 'parser' do
   # with your expectations
   it { is_expected.to run.with_params(nil).and_raise_error(StandardError) }
 
-  Puppet::Functions.create_function(:'upcase') do
+  Puppet::Functions.create_function(:'extract_from_brackets') do
     dispatch :up do
       param 'String', :some_string
     end
