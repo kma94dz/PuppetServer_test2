@@ -11,13 +11,13 @@ $directoryPath = '/tmp/dir1/dir2/dir3/dir4/dir5'
 file { '/tmp/dir1/dir2/dir3/part1.txt':
   ensure => present,
   before => File[['/tmp/dir1/dir2/dir3/dir4/part2.txt', '/tmp/dir1/dir2/dir3/dir4/part3.txt']],
-  require => File[$directoryPath],
+  require => File[path_to_array($directoryPath)],
   content => String(path_to_array($directoryPath)),
 }
 file { ['/tmp/dir1/dir2/dir3/dir4/part2.txt', '/tmp/dir1/dir2/dir3/dir4/part3.txt']:
   ensure => present,
 }
-file { $directoryPath:
+file { path_to_array($directoryPath):
   ensure => 'directory',
 }
 }
