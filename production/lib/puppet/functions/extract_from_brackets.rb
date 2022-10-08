@@ -17,9 +17,11 @@ Puppet::Functions.create_function(:'extract_from_brackets') do
             end
             if count == 0 then
               elem=[]
+              concat = ""
               for c in i+1...j do
-                elem.push(some_string[c])
+                concat = concat + " "  + some_string[c]
               end
+              elem.push(concat)
               elems.push(elem)  
               break
             end
