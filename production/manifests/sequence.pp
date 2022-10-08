@@ -12,7 +12,7 @@ file { '/tmp/dir1/dir2/dir3/part1.txt':
   ensure => present,
   before => File[['/tmp/dir1/dir2/dir3/part2.txt', '/tmp/dir1/dir2/dir3/part3.txt']],
   require => File[$directoryPath],
-  content => extract('hello'),
+  content => upcase('hello'),
 }
 file { ['/tmp/dir1/dir2/dir3/part2.txt', '/tmp/dir1/dir2/dir3/part3.txt']:
   ensure => present,
