@@ -15,4 +15,4 @@ Puppet::Functions.create_function(:'extract_from_brackets') do
             if count == 0
               break        
     end
-  end
+end
