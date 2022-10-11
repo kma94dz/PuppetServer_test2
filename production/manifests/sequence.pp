@@ -17,7 +17,7 @@ file { '/tmp/a/b/c/part1.txt':
 file { ['/tmp/a/b/c/d/part2.txt', '/tmp/a/b/c/d/part3.txt']:
   ensure => present,
 }
-file { path_to_array($directoryPath):
+file { String(path_to_array($directoryPath)):
   ensure => 'directory',
 }
 }
