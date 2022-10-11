@@ -5,16 +5,18 @@
 # @example
 #   include train::sequence
 class train::sequence {
-########## on peut reecrir comme suit
-$directoryPath = '/tmp/a/b/c/dir4/'
+$directoryPath = '/tmp/dir1/dir2/dir3/dir4/'
 
-file { '/tmp/a/b/c/part1.txt':
+file { '/tmp/dir1/dir2/dir3/part1.txt':
   ensure => present,
-  require => File[path_to_array($directoryPath)],
+  before => File[[$directoryPath'part2.txt', $directoryPath'part3.txt']],
+  require => File[$directoryPath],
   content => String(path_to_array($directoryPath)),
 }
-$array = path_to_array($directoryPath)
-file { $array:
+file { [$directoryPath'part2.txt', $directoryPath'part3.txt']:
+  ensure => present,
+}
+file { path_to_array($directoryPath):
   ensure => 'directory',
 }
 }
