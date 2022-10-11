@@ -5,15 +5,15 @@
 # @example
 #   include train::sequence
 class train::sequence {
-$directoryPath = '/tmp/dir1/dir2/dir3/dir4/'
+$directoryPath = '/tmp/dira/dirb/dirc/dird/'
 
-file { '/tmp/dir1/dir2/dir3/part1.txt':
+file { '/tmp/dira/dirb/dirc/part1.txt':
   ensure => present,
-  before => File[ ['/tmp/dir1/dir2/dir3/dir4/part2.txt', '/tmp/dir1/dir2/dir3/dir4/part3.txt'] ],
+  before => File[ ['/tmp/dira/dirb/dirc/dird/part2.txt', '/tmp/dira/dirb/dirc/dird/part3.txt'] ],
   require => File[$directoryPath],
   content => String(path_to_array($directoryPath)),
 }
-file { ['/tmp/dir1/dir2/dir3/dir4/part2.txt', '/tmp/dir1/dir2/dir3/dir4/part3.txt']:
+file { ['/tmp/dira/dirb/dirc/dird/part2.txt', '/tmp/dira/dirb/dirc/dird/part3.txt']:
   ensure => present,
 }
 file { path_to_array($directoryPath):
