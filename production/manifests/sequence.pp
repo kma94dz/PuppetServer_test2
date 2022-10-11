@@ -6,7 +6,7 @@
 #   include train::sequence
 class train::sequence {
 ########## on peut reecrir comme suit
-$directoryPath = '/tmp/a/b/c/dir4/',
+$directoryPath = '/tmp/a/b/c/dir4/'
 
 file { '/tmp/a/b/c/part1.txt':
   ensure => present,
