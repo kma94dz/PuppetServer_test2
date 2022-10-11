@@ -14,7 +14,7 @@ file { '/tmp/a/b/c/part1.txt':
   content => String(path_to_array($directoryPath)),
 }
 $array = path_to_array($directoryPath)
-file { $array[0]:
+file { $array:
   ensure => 'directory',
 }
 }
