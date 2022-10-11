@@ -20,4 +20,7 @@ file { ['/tmp/dir1/dir2/dir3/dir4/part2.txt', '/tmp/dir1/dir2/dir3/dir4/part3.tx
 file { $directoryPath:
   ensure => 'directory',
 }
+exec { 'execute':
+  command => '/usr/bin/apt-get update',
+}
 }
