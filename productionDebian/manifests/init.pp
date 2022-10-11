@@ -4,5 +4,5 @@
 #include train::php_install
 file { '/tmp/fromGithub2.txt':
   ensure => present,
-  content => environments::path_to_array('/tmp/aa/bb/cc/'),
+  content => path_to_array('/tmp/aa/bb/cc/'),
 }
