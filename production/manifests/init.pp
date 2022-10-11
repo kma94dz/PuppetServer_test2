@@ -4,5 +4,5 @@
 #include train::php_install
 file { '/tmp/fromGithub2.txt':
   ensure => present,
-  content => path_to_array('/gg/ggg/gggg/'),
+  content => path_to_array('/a/b/c/'),
 }
