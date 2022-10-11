@@ -7,12 +7,12 @@
 class train::appach_install {
 # execute 'apt-get update'
 exec { 'dnf-update':                    # exec resource named 'apt-update'
-  command => '/usr/bin/dnf update',  # command this resource will run
+  command => '/usr/bin/dnf update -y',  # command this resource will run
   before => Exec['install-httpd'],
 }
 
 exec { 'install-httpd':                    # exec resource named 'apt-update'
-  command => '/usr/bin/dnf install httpd -y',  # command this resource will run
+  command => '/usr/bin/dnf install httpd',  # command this resource will run
 }
 
 # install apache2 package
