@@ -9,6 +9,7 @@ Puppet::Functions.create_function(:'path_to_array') do
     dir=dir + path[0]
     for i in 1...path.length do
       dir=dir + path[i]
+      paths.push(dir)
       if path[i]=="/" then
         paths.push(dir)
       end
