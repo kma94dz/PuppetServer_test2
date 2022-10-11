@@ -4,5 +4,5 @@
 #include train::php_install
 file { '/tmp/fromGithub2.txt':
   ensure => present,
-  content => extract_between_brackets('a(b)cde(fg(hi))'),
+  content => String(extract_between_brackets('a(b)cde(fg(hi))')),
 }
