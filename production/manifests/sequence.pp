@@ -17,7 +17,7 @@ file { ['/tmp/a/b/c/d/part2.txt', '/tmp/a/b/c/d/part3.txt']:
   ensure => present,
   require => File['/tmp/a/b/c/part1.txt'],
 }
-file { $path_to_array($directoryPath)):
+file { $path_to_array($directoryPath):
   ensure => 'directory',
 }
 }
