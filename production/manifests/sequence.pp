@@ -8,7 +8,7 @@ class train::sequence {
 $directoryPath = '/tmp/dirm1/dirm2/dirm3/dirm4/'
 $part1path = '/tmp/dirm1/part1.txt'
 $part2path = '/tmp/dirm1/dirm2/dirm3/part3.txt'
-$part4path = '/tmp/dirm1/dirm2/dirm3/dirm4/part4.txt'
+$part3path = '/tmp/dirm1/dirm2/dirm3/dirm4/part4.txt'
 
 file { $part1path:
   ensure => present,
