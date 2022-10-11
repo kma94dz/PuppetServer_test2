@@ -4,7 +4,7 @@ Puppet::Functions.create_function(:'path_to_array') do
   end
 
   def pta(path)
-    paths=[] 
+    Array paths=[] 
     dir=""
     dir=dir + path[0]
     for i in 1...path.length do
