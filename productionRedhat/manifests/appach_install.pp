@@ -6,23 +6,43 @@
 #   include train::appach_install
 class train::appach_install {
 # execute 'apt-get update'
-exec { 'dnf-update':                    # exec resource named 'apt-update'
-  command => '/usr/bin/dnf update -y',  # command this resource will run
-  before => Exec['install-httpd'],
-}
-
-exec { 'install-httpd':                    # exec resource named 'apt-update'
-  command => '/usr/bin/dnf install httpd',  # command this resource will run
+# execute 'apt-get update'
+exec { 'apt-update':                    # exec resource named 'apt-update'
+  command => '/usr/bin/dnf update -y'  # command this resource will run
 }
 
 # install apache2 package
-package { 'httpd':
-  require => Exec['dnf-update'],        # require 'apt-update' before installing
+package { 'apache2':
+  require => Exec['apt-update'],        # require 'apt-update' before installing
   ensure => installed,
 }
 
 # ensure apache2 service is running
-service { 'httpd':
+service { 'apache2':
   ensure => running,
+}
+
+# install mysql-server package
+package { 'mysql-server':
+  require => Exec['apt-update'],        # require 'apt-update' before installing
+  ensure => installed,
+}
+
+# ensure mysql service is running
+service { 'mysql':
+  ensure => running,
+}
+
+# install php5 package
+package { 'php5':
+  require => Exec['apt-update'],        # require 'apt-update' before installing
+  ensure => installed,
+}
+
+# ensure info.php file exists
+file { '/var/www/html/info.php':
+  ensure => file,
+  content => '<?php  phpinfo(); ?>',    # phpinfo code
+  require => Package['apache2'],        # require 'apache2' package before creating
 }
 }
