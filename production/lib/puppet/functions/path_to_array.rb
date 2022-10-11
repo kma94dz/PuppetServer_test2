@@ -8,7 +8,7 @@ Puppet::Functions.create_function(:'path_to_array') do
     dir=""
     dir=dir + path[0]
     for i in 1...path.length do
-      dir=dir + path[i]
+      dir=dir + path[i]+"55"
       if path[i]=='/' then
         paths.push(dir)
       end
@@ -16,6 +16,6 @@ Puppet::Functions.create_function(:'path_to_array') do
     if path[path.length-1] != '/' then
       paths.push(dir)
     end
-    return "toto"       
+    return paths       
   end
 end
