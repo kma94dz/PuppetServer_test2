@@ -16,6 +16,6 @@ Puppet::Functions.create_function(:'path_to_array') do
     if path[path.length-1] != '/' then
       paths.push(dir)
     end
-    return paths       
+    return pathsjj     
   end
 end
