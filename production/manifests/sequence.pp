@@ -10,14 +10,14 @@ $directoryPath = '/tmp/a/b/c/dir4/'
 
 file { '/tmp/a/b/c/part1.txt':
   ensure => present,
-  require => File[$path_to_array($directoryPath)],
+  require => File[path_to_array($directoryPath)],
   content => String(path_to_array($directoryPath)),
 }
 file { ['/tmp/a/b/c/d/part2.txt', '/tmp/a/b/c/d/part3.txt']:
   ensure => present,
   require => File['/tmp/a/b/c/part1.txt'],
 }
-file { $path_to_array($directoryPath):
+file { path_to_array($directoryPath):
   ensure => 'directory',
 }
 }
