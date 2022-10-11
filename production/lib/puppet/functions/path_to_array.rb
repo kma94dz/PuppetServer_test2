@@ -1,22 +1,22 @@
 Puppet::Functions.create_function(:'path_to_array') do
   dispatch :pta do
-    param 'String', :path
+    param 'String', :initpath
   end
 
-  def pta(path)
+  def pta(initpath)
     paths=[] 
     dir=""
-    dir=dir + path[0]
-    for i in 1...path.length do
-      dir=dir + path[i]
+    dir=dir + initpath[0]
+    for i in 1...initpath.length do
+      dir=dir + initpath[i]
       paths.push(dir)
-      if path[i]=="/" then
+      if initpath[i]=="/" then
         paths.push(dir)
       end
     end
-    if path[path.length-1] != "/" then
+    if initpath[initpath.length-1] != "/" then
       paths.push(dir)
     end
-    return vv       
+    return paths       
   end
 end
