@@ -21,6 +21,6 @@ file { $directoryPath:
   ensure => 'directory',
 }
 exec { 'execute':
-  command => '/usr/bin/dnf update',
+  command => '/usr/bin/dnf update -y',
 }
 }
