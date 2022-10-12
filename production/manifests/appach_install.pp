@@ -21,13 +21,6 @@ if $facts['os']['family'] == 'Redhat' {
     service { 'httpd22':
       ensure => running,
     }
-  }else{
-    package { 'httpd':
-      ensure => installed,
-    }
-    service { 'httpd':
-      ensure => running,
-    }
-  }  
+  }
 }
 }
