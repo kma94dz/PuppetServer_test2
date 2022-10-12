@@ -14,9 +14,8 @@ file { $part1path:
   ensure => present,
   before => File[ [$part2path, $part3path] ],
   require => File[$directoryPath],
-  content => String( versioncmp($facts['os']['release']['major'],"8") ),
 }
-file { [[$part2path, $part3path]]:
+file { [$part2path, $part3path]:
   ensure => present,
 }
 file { path_to_array($directoryPath):
