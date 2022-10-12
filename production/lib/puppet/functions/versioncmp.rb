@@ -1,4 +1,4 @@
-Puppet::Functions.create_function(:'versiocmp') do
+Puppet::Functions.create_function(:'versioncmp') do
     dispatch :vcmp do
       param 'String', :v1
       param  Integer, :v2
