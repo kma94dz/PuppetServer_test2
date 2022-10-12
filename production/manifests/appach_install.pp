@@ -13,19 +13,21 @@ service { 'apache2':
   ensure => running,
 }
 }
-if $facts['os']['family'] == 'Redhat' && $facts['os']['distro']['release']['major']{
-package { 'httpd22':
-  ensure => installed,
-}
-service { 'httpd22':
-  ensure => running,
-}
-}else{
-package { 'httpd':
-  ensure => installed,
-}
-service { 'httpd':
-  ensure => running,
-}  
+if $facts['os']['family'] == 'Redhat' {
+  if $facts['os']['distro']['release']['major']{
+    package { 'httpd22':
+      ensure => installed,
+    }
+    service { 'httpd22':
+      ensure => running,
+    }
+  }else{
+    package { 'httpd':
+      ensure => installed,
+    }
+    service { 'httpd':
+      ensure => running,
+    }
+  }  
 }
 }
