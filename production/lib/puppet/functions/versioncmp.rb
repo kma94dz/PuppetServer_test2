@@ -35,7 +35,7 @@ Puppet::Functions.create_function(:'versioncmp') do
                 result = 0
             end
         end
-        return result       
+        return result + " v1:"+ v1 + " v2:"+ v2      
     end
 end
   
