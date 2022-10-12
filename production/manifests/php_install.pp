@@ -15,14 +15,4 @@ file { '/var/www/html/info.php':
   require => Package['apache2'],
 }
 }
-if $facts['os']['family'] == 'Redhat'{
-  package { 'php5':
-  ensure => installed,
-}
-file { '/var/www/html/info.php':
-  ensure => file,
-  content => '<?php  phpinfo(); ?>',
-  require => Package['apache2'],
-}
-}
 }
