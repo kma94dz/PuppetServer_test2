@@ -7,7 +7,7 @@
 class train::puppet_noop {
   if $facts['os']['family'] == 'Debian'{
       exec { 'go for noop':
-        command => '/usr/bin/puppet agent --noop',
+        command => '/usr/bin/puppet agent --no-noop',
       }
   }
 }
