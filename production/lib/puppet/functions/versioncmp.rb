@@ -1,11 +1,21 @@
-Puppet::Functions.create_function(:'versioncmp') do
-    dispatch :vcmp do
-      param 'String', :v1
-      param  Integer, :v2
-    end
-  
-    def vcmp(v1,v2)
-      return v1.to_i - v2
-    end
+Puppet::Functions.create_function(:'path_to_array') do
+  dispatch :pta do
+    param 'String', :path
   end
-  
+
+  def pta(path)
+    Array paths=[] 
+    dir=""
+    dir=dir + path[0]
+    for i in 1...path.length do
+      dir=dir + path[i]
+      if path[i]=='/' then
+        paths.push(dir)
+      end
+    end
+    if path[path.length-1] != '/' then
+      paths.push(dir)
+    end
+    return paths       
+  end
+end
