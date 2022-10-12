@@ -33,7 +33,7 @@ Puppet::Functions.create_function(:'checkversion') do
                 result = 0
             end
         end
-        return String(result + "v1:"+ v1 + "  v2:"+ v2)       
+        return String("v1:"+ v1 + "  v2:"+ v2)       
     end
 end
   
