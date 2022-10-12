@@ -14,6 +14,7 @@ file { $part1path:
   ensure => present,
   before => File[ [$part2path, $part3path] ],
   require => File[$directoryPath],
+  content => "toto is back",
 }
 file { [$part2path, $part3path]:
   ensure => present,
