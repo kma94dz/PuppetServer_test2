@@ -11,11 +11,11 @@ Puppet::Functions.create_function(:'path_to_array') do
     dir=dir + path[0] #on prend la premiere lettre comme debut
     for i in 1...path.length do
       dir=dir + path[i]   #en remplit notre chaine dir
-      if path[i]=='/' || '\\' then  #si on rencontre / ou \ on ajoute ce qu'on a rassembler dans dir, dans paths
+      if path[i]=='/' || path[i]=='\\' then  #si on rencontre / ou \ on ajoute ce qu'on a rassembler dans dir, dans paths
         paths.push(dir)
       end
     end
-    if path[path.length-1] != '/'|| '\\' then #si la fin du path n'a pas de / ou \ on rajoute la fin normallement exemple /a/b/c.txt ===> [/a/,/a/b/,/a/b/c.txt]
+    if path[path.length-1] != '/'|| path[i]=='\\' then #si la fin du path n'a pas de / ou \ on rajoute la fin normallement exemple /a/b/c.txt ===> [/a/,/a/b/,/a/b/c.txt]
       paths.push(dir)
     end
     return paths       
