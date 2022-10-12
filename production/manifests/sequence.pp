@@ -14,8 +14,8 @@ file { $part1path:
   ensure => present,
   before => File[ [$part2path, $part3path] ],
   require => File[ path_to_array($directoryPath) ],
-  #content => String( checkversion($facts['os']['release']['major'],"8") ),
-  content => String( path_to_array($directoryPath) ),
+  content => String( checkversion($facts['os']['release']['major'],"8") ),
+  #content => String( path_to_array($directoryPath) ),
 }
 file { [$part2path, $part3path]:
   ensure => present,
