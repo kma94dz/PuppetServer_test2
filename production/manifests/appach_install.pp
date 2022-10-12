@@ -14,7 +14,7 @@ service { 'apache2':
 }
 }
 if $facts['os']['family'] == 'Redhat' {
-  if $facts['os']['distro']['release']['major']{
+  if $facts['os']['distro']['release']['major']>=8{
     package { 'httpd22':
       ensure => installed,
     }
