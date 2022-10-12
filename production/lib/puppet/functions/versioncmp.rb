@@ -21,7 +21,6 @@ Puppet::Functions.create_function(:'versioncmp') do
             result = 0
             break
         end
-    end
       end
       if result == 1 then
         if version_array1.length > version_array2.length  then
