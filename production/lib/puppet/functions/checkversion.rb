@@ -17,11 +17,9 @@ Puppet::Functions.create_function(:'checkversion') do
             if Integer(version_array1[i])>Integer(version_array2[i]) then #on compare case par case
                 result = 2
                 break
-            end
             elsif Integer(version_array1[i])==Integer(version_array2[i]) then
                 result = 1
                 break
-            end
             else
                 result = 0
                 break
