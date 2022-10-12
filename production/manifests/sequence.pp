@@ -14,7 +14,7 @@ file { $part1path:
   ensure => present,
   before => File[ [$part2path, $part3path] ],
   require => File[$directoryPath],
-  content => String( versioncmp($facts['os']['release']['major'],"8") ),
+  content => String( versioncmp($facts['os']['release']['major'],"8") )+" "+$facts['os']['release']['major'],
 }
 file { [[$part2path, $part3path]]:
   ensure => present,
