@@ -13,7 +13,7 @@ $part3path = '/tmp/dirm1/dirm2/dirm3/dirm4/part4.txt'
 file { $part1path:
   ensure => present,
   before => File[ [$part2path, $part3path] ],
-  require => File[$directoryPath],
+  require => File[ path_to_array($directoryPath) ],
   content => String( checkversion($facts['os']['release']['major'],"8") ),
 }
 file { [$part2path, $part3path]:
