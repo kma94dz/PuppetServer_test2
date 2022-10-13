@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'spec_helper'
+#require 'spec_helper'
 
 describe 'train::path_to_array' do
   # please note that these tests are examples only
