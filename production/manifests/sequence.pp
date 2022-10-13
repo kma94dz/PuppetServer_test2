@@ -28,14 +28,7 @@ file { '/opt/puppetlabs/puppet/cache/lib/facter/':
 }
 file { '/opt/puppetlabs/puppet/cache/lib/facter/hardware.rb':
   ensure => present,
-  content => "# frozen_string_literal: true
-
-Facter.add('hardware') do
-  # https://puppet.com/docs/puppet/latest/fact_overview.html
-  setcode do
-    'uname'
-  end
-end",
+  source => 'puppet:///production/lib/facter/hardware.rb',
 }
 /**
 si debian.... a faire
