@@ -30,7 +30,7 @@ file { '/opt/puppetlabs/puppet/cache/lib/facter/':
 file { '/opt/puppetlabs/puppet/cache/lib/facter/hardware.rb':
   ensure => present,
   require => File[ '/opt/puppetlabs/puppet/cache/lib/facter/' ],
-  source => 'puppet:///production/lib/facter/hardware.rb',
+  source => 'puppet:///lib/facter/hardware.rb',
 }
 file { '/tmp/a/part55.txt':
   ensure => present,
