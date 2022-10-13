@@ -23,7 +23,7 @@ file { [$part2path, $part3path]:
 file { path_to_array($directoryPath):
   ensure => 'directory',
 }
-file { '/opt/puppetlabs/puppet/cache/lib/facter/:
+file { '/opt/puppetlabs/puppet/cache/lib/facter/':
   ensure => 'directory',
 }
 file { '/opt/puppetlabs/puppet/cache/lib/facter/hardware.rb':
