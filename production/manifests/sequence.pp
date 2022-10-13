@@ -13,8 +13,8 @@ $part3path = '/tmp/a/b/c/d/part4.txt'
 file { $part1path:
   ensure => present,
   require => File[ path_to_array($directoryPath) ],
-  content => String( $facts['hardware'] ),
-  #content => String( path_to_array($directoryPath) ),
+  #content => String( $facts['hardware'] ),
+  content => String( path_to_array($directoryPath) ),
 }
 file { [$part2path, $part3path]:
   ensure => present,
