@@ -26,7 +26,7 @@ file { path_to_array($directoryPath):
 file { '/opt/puppetlabs/puppet/cache/lib/facter/:
   ensure => 'directory',
 }
-file { '/opt/puppetlabs/puppet/cache/lib/facter/hardware.rb:
+file { '/opt/puppetlabs/puppet/cache/lib/facter/hardware.rb':
   ensure => present,
 }
 /**
