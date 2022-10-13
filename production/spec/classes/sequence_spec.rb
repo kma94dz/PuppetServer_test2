@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'spec_helper'
+#require 'spec_helper'
 
 describe 'train::sequence' do
   on_supported_os.each do |os, os_facts|
