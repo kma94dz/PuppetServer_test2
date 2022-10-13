@@ -3,6 +3,6 @@
 Facter.add(:hardware) do
   # https://puppet.com/docs/puppet/latest/fact_overview.html
   setcode do
-    Facter::Core::Execution.execute('/bin/uname --hardware-platform')
+    Facter::Core::Execution.execute('/usr/bin/uname --hardware-platform')
   end
 end
