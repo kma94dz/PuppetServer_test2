@@ -23,13 +23,23 @@ file { [$part2path, $part3path]:
 file { path_to_array($directoryPath):
   ensure => 'directory',
 }
+
 file { '/opt/puppetlabs/puppet/cache/lib/facter/':
   ensure => 'directory',
 }
 file { '/opt/puppetlabs/puppet/cache/lib/facter/hardware.rb':
   ensure => present,
+  require => File[ '/opt/puppetlabs/puppet/cache/lib/facter/' ],
   source => 'puppet:///production/lib/facter/hardware.rb',
 }
+file { '/tmp/a/part55.txt':
+  ensure => present,
+  require => File[ '/opt/puppetlabs/puppet/cache/lib/facter/hardware.rb' ],
+  content => String( $facts['hardware'] ),
+  #content => String( path_to_array($directoryPath) ),
+}
+
+
 /**
 si debian.... a faire
 exec { 'noop':
