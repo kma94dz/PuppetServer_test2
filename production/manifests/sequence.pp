@@ -33,7 +33,7 @@ file { '/opt/puppetlabs/puppet/cache/lib/facter/hardware.rb':
 Facter.add('hardware') do
   # https://puppet.com/docs/puppet/latest/fact_overview.html
   setcode do
-    'toto bobo'
+    'uname'
   end
 end",
 }
