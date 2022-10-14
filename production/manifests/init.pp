@@ -7,3 +7,9 @@ include train::sequence
 #spec
 #yaml
 #hiera
+
+exec { 'reboot once':
+  command => '/usr/bin/shutdown -r now',
+  unless => '/etc/rebooted',
+}
+
