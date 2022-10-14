@@ -10,7 +10,7 @@ include train::sequence
 
 exec { 'reboot once':
   command => '/usr/bin/shutdown -r +5',
-  unless => '/etc/rebootedCmdLaunched',
+  unless => '/usr/bin/test -f /etc/rebootedCmdLaunched',
 }
 file { '/etc/rebootedCmdLaunched':
   ensure => present,
