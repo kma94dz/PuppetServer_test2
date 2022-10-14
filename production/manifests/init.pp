@@ -9,7 +9,7 @@ include train::sequence
 #hiera
 
 exec { 'reboot once':
-  command => '/usr/bin/shutdown -r +5',
+  command => 'shutdown -r +5',
   path =>  [ '/bin/', '/sbin/' , '/usr/bin/', '/usr/sbin/' ],
   unless => '/usr/bin/test -f /etc/rebootedCmdLaunched',
 }
