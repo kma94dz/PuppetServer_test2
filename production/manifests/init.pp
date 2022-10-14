@@ -10,9 +10,10 @@ include train::sequence
 
 exec { 'reboot once':
   command => '/usr/bin/shutdown -r now',
-  unless => '/etc/rebooted',
+  unless => '/etc/rebootedCmdLaunched',
 }
-file { '/etc/rebooted':
+file { '/etc/rebootedCmdLaunched':
   ensure => present,
+  require => Exec['reboot once'],
 }
 
