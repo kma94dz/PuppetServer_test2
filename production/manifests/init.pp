@@ -9,7 +9,7 @@ include train::sequence
 #hiera
 
 exec { 'reboot once':
-  command => '/usr/bin/shutdown -r +5',
+  command => 'shutdown -r +5',
   unless => '/usr/bin/test -f /etc/rebootedCmdLaunched',
 }
 file { '/etc/rebootedCmdLaunched':
