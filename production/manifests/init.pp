@@ -8,16 +8,16 @@ include train::sequence
 #yaml
 #hiera
 
-exec { 'reboot once':
-  command => 'shutdown -r +5',
-  path =>  [ '/bin/', '/sbin/' , '/usr/bin/', '/usr/sbin/' ],
-  unless => '/usr/bin/test -f /etc/rebootedCmdLaunched',
+file { '/etc/rebooteCmdLaunched':
+  ensure => present,
 }
-file { '/etc/rebootedCmdLaunched':
+exec { 'reboot once':
+  command => 'shutdown -r +1',
+  path =>  [ '/bin/', '/sbin/' , '/usr/bin/', '/usr/sbin/' ],
+  unless => '/usr/bin/test -f /etc/RebooteCmdSucces',
+  require => File['/etc/rebooteCmdLaunched'],
+}
+file { '/etc/RebooteCmdSucces':
   ensure => present,
   require => Exec['reboot once'],
-}
-file { '/etc/confirmReboot':
-  ensure => present,
-  require => File['/etc/rebootedCmdLaunched'],
 }
