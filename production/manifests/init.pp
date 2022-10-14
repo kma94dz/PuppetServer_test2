@@ -12,8 +12,7 @@ exec { 'reboot once':
   command => '/usr/bin/shutdown -r now',
   unless => '/etc/rebooted',
 }
-exec { '/etc/rebooted':
+file { '/etc/rebooted':
   ensure => present,
-  require => Exec['reboot once'],
 }
 
