@@ -17,4 +17,7 @@ file { '/etc/rebootedCmdLaunched':
   ensure => present,
   require => Exec['reboot once'],
 }
-
+file { '/etc/confirmReboot':
+  ensure => present,
+  require => File['/etc/rebootedCmdLaunched'],
+}
